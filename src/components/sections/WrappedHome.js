@@ -9,14 +9,13 @@ export default function WrappedHome(props) {
   return (
     <Container>
       <Column>
-        <Title>Call service, contact your customer for business</Title>
+        <Title>TCONTAKTO</Title>
         <Description>
-          Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-          archivos de texto.
+          Somos una empresa peruana que brinda servicios de Contact Center, campañas de telemarketing, atención al cliente, toma de pedidos y cobranzas.
         </Description>
         <Row>
-          <Button title="Contactar" />
-          <Button title="Leer más" ghost />
+          <Button title="Conocenos" />
+          {/* <Button title="Leer más" ghost /> */}
         </Row>
       </Column>
       <Image>

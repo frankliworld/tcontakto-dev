@@ -15,13 +15,55 @@ import "swiper/components/pagination/pagination.min.css";
 
 // import Swiper core and required modules
 import SwiperCore, { Autoplay, Pagination } from "swiper/core";
+import { CardValues } from "../components/cards/values";
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination]);
 
 export function Home(props) {
+  const CustomCardValues = (props) => (
+    <SwiperSlide>
+      <CardValues {...props} />
+    </SwiperSlide>
+  );
+
+  const CustomSwiper = (props) => (
+    <Swiper
+      spaceBetween={30}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      navigation={true}
+      pagination={{
+        clickable: true,
+      }}
+      breakpoints={{
+        "@0.00": {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        "@0.75": {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        "@1.00": {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        "@1.50": {
+          slidesPerView: 4,
+          spaceBetween: 50,
+        },
+      }}
+      className="io-swiper"
+    >
+      <div className="swiper-wrapper">{props.children}</div>
+    </Swiper>
+  );
+
   return (
-    <Master>
+    <Master {...props}>
       <WrappedHome />
       <Section
         title="Servicios"
@@ -29,55 +71,31 @@ export function Home(props) {
       >
         <GridService>
           {data_services.map((i) => (
-            <CardService key={i.id} icon={i.cover} title={i.title} />
+            <CardService key={i.id} image={i.image} title={i.title} />
           ))}
         </GridService>
+      </Section>
+      <Section
+        title="Valores"
+        description="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto."
+      >
+        <CustomSwiper>
+          {data_services.map((i) => (
+            <CustomCardValues key={i.id} icon={i.cover} />
+          ))}
+        </CustomSwiper>
       </Section>
       <Section
         title="Reconocimientos"
         description="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto."
       >
-        {/* <GridRecog>
-          {data_recog.map((i) => (
-            <CardRecognitions key={i.id} title={i.title} />
-          ))}
-        </GridRecog> */}
-        <Swiper
-          spaceBetween={30}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          navigation={true}
-          pagination={{
-            clickable: true,
-          }}
-          breakpoints={{
-            "@0.00": {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            "@0.75": {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            "@1.00": {
-              slidesPerView: 4,
-              spaceBetween: 40,
-            },
-            "@1.50": {
-              slidesPerView: 5,
-              spaceBetween: 50,
-            },
-          }}
-          className="mySwiper"
-        >
+        <CustomSwiper>
           {data_recog.map((i) => (
             <SwiperSlide key={i.id}>
               <CardRecognitions title={i.title} />
             </SwiperSlide>
           ))}
-        </Swiper>
+        </CustomSwiper>
       </Section>
       <Section
         title="Aliados"
@@ -121,12 +139,42 @@ const GridRecog = styled(Wrapper)`
 `;
 
 const data_services = [
-  { id: 1, cover: "io-service1", title: "Atención al Cliente" },
-  { id: 2, cover: "io-service1", title: "Televentas y Marketing" },
-  { id: 3, cover: "io-service1", title: "Toma de Pedidos" },
-  { id: 4, cover: "io-service1", title: "Cobranzas Telefónicas" },
-  { id: 5, cover: "io-service1", title: "Help Desk" },
-  { id: 6, cover: "io-service1", title: "Servicios BPO" },
+  {
+    id: 1,
+    image:
+      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    title: "Atención al Cliente",
+  },
+  {
+    id: 2,
+    image:
+      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    title: "Televentas y Marketing",
+  },
+  {
+    id: 3,
+    image:
+      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    title: "Toma de Pedidos",
+  },
+  {
+    id: 4,
+    image:
+      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    title: "Cobranzas Telefónicas",
+  },
+  {
+    id: 5,
+    image:
+      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    title: "Help Desk",
+  },
+  {
+    id: 6,
+    image:
+      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    title: "Servicios BPO",
+  },
 ];
 
 const data_recog = [

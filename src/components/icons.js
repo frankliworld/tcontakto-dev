@@ -393,3 +393,12 @@ export const IconHomeSwipe =()=>(
 </svg>
 
  )
+
+ export const IconValues1 = (props) => (
+  <svg width="58" height="58" viewBox="0 0 58 58" fill="none">
+  <path d="M29.25 56.0054C44.2998 56.0054 56.5 43.8051 56.5 28.7554C56.5 13.7056 44.2998 1.50537 29.25 1.50537C14.2002 1.50537 2 13.7056 2 28.7554C2 43.8051 14.2002 56.0054 29.25 56.0054Z" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20.1667 24.2136L29.25 27.2414M23.1944 42.3803L29.25 33.297L35.3056 42.3803H23.1944ZM29.25 33.297V27.2414L38.3333 24.2136L29.25 33.297Z" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M29.1124 15.268C29.9485 15.268 30.6263 14.5902 30.6263 13.7541C30.6263 12.918 29.9485 12.2402 29.1124 12.2402C28.2763 12.2402 27.5985 12.918 27.5985 13.7541C27.5985 14.5902 28.2763 15.268 29.1124 15.268Z" fill="black" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  
+ )

@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+:root {
+    --Primary: #98BA08;
+}
+
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -601,6 +606,15 @@ pre tt:after {
 
 
 /* all libs */
+.io-swiper {
+    width: 100%;
+    padding: 40px 0 !important;
+}
+.swiper-pagination-bullet-active {
+    width: 24px !important;
+    border-radius: 10px !important;
+    background: var(--Primary) !important;
+}
 .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     border-radius: 10px !important;
     border: 1px solid #0C4867 !important;

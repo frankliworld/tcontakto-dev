@@ -4,6 +4,7 @@ import {
   IconHomeSwipe,
   IconService1,
   IconService1Act,
+  IconValues1,
   Logo
 } from "./icons";
 
@@ -38,6 +39,12 @@ export const Icon = (props) => {
       icon = <IconService1Act {...props} />;
       break;
     }
+
+    case "io-values-1": {
+      icon = <IconValues1 {...props} />;
+      break;
+    }
+
     //End icons local
 
     default: {

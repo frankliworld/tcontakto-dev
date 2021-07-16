@@ -23,6 +23,7 @@ const Wrapped = styled.div`
   border-style: solid;
   border-color: transparent;
   height: 50px;
+  padding: ${props => props.customPadding ? props.customPadding : "0"};
   *,
   & {
     transition: 1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
