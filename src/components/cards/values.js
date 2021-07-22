@@ -3,14 +3,13 @@ import styled from "styled-components";
 import { Icon } from "../io";
 import { themes } from "../styles/ColorsStyle";
 import { BodyMain, TextSmall } from "../styles/TextStyles";
-import image from "./../../assets/image/logo-re.png";
 
 export function CardValues(props) {
   return (
     <Wrapped>
-      <Simbol icon="io-values-1"/>
-      <Title>TITLE asdasd</Title>
-      <Detailed>Vivimos como nadie nuestra labor</Detailed>
+      <Simbol {...props}/>
+      <Title>{props.title}</Title>
+      <Detailed>{props.description}</Detailed>
     </Wrapped>
   );
 }
@@ -45,7 +44,7 @@ const Detailed = styled(TextSmall)`
 `;
 
 const Simbol = (props) => (
-  <WrappedSimbol>
+  <WrappedSimbol {...props}>
     <Icon {...props}/>
   </WrappedSimbol>
 );
@@ -57,7 +56,8 @@ const WrappedSimbol = styled.div`
   width: 80px;
   height: 80px;
   border-radius: 50px;
-  background: red;
+  background: ${props => props.color  ? `linear-gradient(180deg, #${props.color.b} 0%, #${props.color.a} 100%)` : themes.light.primary};
+  color: white;
   position: absolute;
   right: 20px;
   top: -40px;

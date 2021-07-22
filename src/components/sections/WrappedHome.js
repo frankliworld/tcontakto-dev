@@ -6,6 +6,12 @@ import { themes } from "../styles/ColorsStyle";
 import { H2, TextSmall, Wrapper } from "../styles/TextStyles";
 
 export default function WrappedHome(props) {
+
+  function toContact() {
+    let parent = document.getElementById("history-start");
+    parent.scrollIntoView();
+  }
+
   return (
     <Container>
       <Column>
@@ -14,7 +20,7 @@ export default function WrappedHome(props) {
           Somos una empresa peruana que brinda servicios de Contact Center, campañas de telemarketing, atención al cliente, toma de pedidos y cobranzas.
         </Description>
         <Row>
-          <Button title="Conocenos" />
+          <Button title="Conocenos" onButton={toContact}/>
           {/* <Button title="Leer más" ghost /> */}
         </Row>
       </Column>
@@ -29,6 +35,7 @@ const Container = styled(Wrapper)`
   display: grid;
   grid-template-columns: 440px 1fr;
   gap: 100px;
+  padding-top: 60px;
   ${themes.light.card};
   @media (${media.tablet}) {
     display: flex;

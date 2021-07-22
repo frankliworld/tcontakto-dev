@@ -18,9 +18,9 @@ export function CardService(props) {
 }
 
 const Wrapped = styled.article`
-  max-height: 400px;
+  max-height: 380px;
   display: grid;
-  grid-template-rows: 200px 66px;
+  grid-template-rows: 260px 1fr;
   gap: 20px;
   background: #ffffff;
   border: 0.5px solid ${themes.light.gray6};
@@ -31,25 +31,21 @@ const Wrapped = styled.article`
     transition: 1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   }
   :hover {
-    grid-template-rows: 200px 1fr 50px;
+    grid-template-rows: 200px 1fr ;
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
     transform: translateY(-3px);
-    svg {
-      height: 180px;
+    div {
+      /* opacity: 1; */
+      visibility: visible;
     }
     div {
       opacity: 1;
-      visibility: visible;
+      animation-delay: .6s;
     }
   }
-
-  svg {
-    width: 100%;
-    height: 250px;
-  }
   div {
-    /* opacity: 0; */
-    /* visibility: hidden; */
+    opacity: 0;
+    visibility: hidden;
   }
 `;
 
@@ -84,5 +80,5 @@ const Text = styled(H3)`
 `;
 
 const WrappedButton = styled.div`
-  padding: 30px;
+  padding: 0 30px 30px 30px;
 `;

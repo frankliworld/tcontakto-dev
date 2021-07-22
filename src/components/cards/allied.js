@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { themes } from "../styles/ColorsStyle";
-import image from "./../../assets/image/logo-re.png";
+import image from "../../assets/images/logo-re.png";
 
 export function CardAllied(props) {
   return (
@@ -14,6 +14,8 @@ export function CardAllied(props) {
 const Wrapped = styled.article`
   padding: 20px;
   display: grid;
+  align-items: center;
+  justify-content: center;
   background: #ffffff;
   border: 0.5px solid ${themes.light.gray6};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);

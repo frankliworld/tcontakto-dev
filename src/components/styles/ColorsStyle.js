@@ -6,7 +6,7 @@ export const themes = {
     // primary: `#2882f2`,
     secondary: `#E673E6`,
     // secondary: `#48a5f5`,
-    backgroundColor: `#f2f6ff`,
+    backgroundColor: `#F2F2F2`,
     red: `rgba(233,67,116,1)`,
     gray: `#999086`,
     gray2: `#aeaeb2`,

@@ -17,6 +17,14 @@ import "swiper/components/pagination/pagination.min.css";
 import SwiperCore, { Autoplay, Pagination } from "swiper/core";
 import { CardValues } from "../components/cards/values";
 
+import imageService1 from "../assets/images/services/service-1.jpg";
+import imageService2 from "../assets/images/services/service-2.jpeg";
+import imageService3 from "../assets/images/services/service-3.jpeg";
+import imageService4 from "../assets/images/services/service-4.jpeg";
+import imageService5 from "../assets/images/services/service-5.jpeg";
+import imageService6 from "../assets/images/services/service-6.jpeg";
+import { HistoryHome } from "../components/sections/history";
+
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -38,24 +46,26 @@ export function Home(props) {
       pagination={{
         clickable: true,
       }}
-      breakpoints={{
-        "@0.00": {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        "@0.75": {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        "@1.00": {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
-        "@1.50": {
-          slidesPerView: 4,
-          spaceBetween: 50,
-        },
-      }}
+      breakpoints={
+        props.breakpoints || {
+          "@0.00": {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          "@0.75": {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          "@1.00": {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          "@1.50": {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        }
+      }
       className="io-swiper"
     >
       <div className="swiper-wrapper">{props.children}</div>
@@ -75,13 +85,14 @@ export function Home(props) {
           ))}
         </GridService>
       </Section>
+      <HistoryHome/>
       <Section
         title="Valores"
         description="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto."
       >
         <CustomSwiper>
-          {data_services.map((i) => (
-            <CustomCardValues key={i.id} icon={i.cover} />
+          {data_values.map((i) => (
+            <CustomCardValues key={i.id} icon={i.icon} title={i.title} description={i.description} color={i.color}/>
           ))}
         </CustomSwiper>
       </Section>
@@ -101,11 +112,32 @@ export function Home(props) {
         title="Aliados"
         description="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto."
       >
-        <GridRecog>
-          {data_services.map((i) => (
-            <CardAllied key={i.id} icon={i.cover} />
+        <CustomSwiper
+          breakpoints={{
+            "@0.00": {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            "@0.75": {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            "@1.00": {
+              slidesPerView: 6,
+              spaceBetween: 40,
+            },
+            "@1.50": {
+              slidesPerView: 8,
+              spaceBetween: 50,
+            },
+          }}
+        >
+          {data_allied.map((i) => (
+            <SwiperSlide key={i.id}>
+              <CardAllied title={i.name} />
+            </SwiperSlide>
           ))}
-        </GridRecog>
+        </CustomSwiper>
       </Section>
     </Master>
   );
@@ -141,40 +173,43 @@ const GridRecog = styled(Wrapper)`
 const data_services = [
   {
     id: 1,
-    image:
-      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    image: imageService1,
     title: "Atención al Cliente",
   },
   {
     id: 2,
-    image:
-      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    image: imageService2,
     title: "Televentas y Marketing",
   },
   {
     id: 3,
-    image:
-      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    image: imageService3,
     title: "Toma de Pedidos",
   },
   {
     id: 4,
-    image:
-      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    image: imageService4,
     title: "Cobranzas Telefónicas",
   },
   {
     id: 5,
-    image:
-      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    image: imageService5,
     title: "Help Desk",
   },
   {
     id: 6,
-    image:
-      "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    image: imageService6,
     title: "Servicios BPO",
   },
+];
+const data_values = [
+  { id: 1, icon: "io-values-1", title: "Integridad", description: "Vivimos como nadie nuestra labor", color: {a: "41c0c7", b: "009fc3"}},
+  { id: 2, icon: "io-values-2", title: "Pasión", description: "Damos el máximo por conseguir los objetivos", color: {a: "ee3765", b: "d11f1f"}},
+  { id: 3, icon: "io-values-3", title: "Compromiso", description: "Somos transparentes y generamos confianza", color: {a: "1b9038", b: "34c759"}},
+  { id: 4, icon: "io-values-4", title: "Innovación", description: "Buscamos ser la novedad desde dentro hacia afuera", color: {a: "ee3765", b: "f3722e"}},
+  { id: 5, icon: "io-values-5", title: "Flexibilidad", description: "Cambiamos y nos adaptamos para ser los mejores", color: {a: "f57c23", b: "fecc49"}},
+  { id: 6, icon: "io-values-6", title: "Lealtad", description: "Sentimos la empresa como nuestra y respetamos las reglas que hay en ella", color: {a: "5859a9", b: "a56aae"}},
+  { id: 7, icon: "io-values-7", title: "Dinamismo", description: "Resolvemos ágilmente los problemas tomando decisiones oportunas para beneficio de todos los involucrados", color: {a: "000", b: "8e8e93"}},
 ];
 
 const data_recog = [
@@ -198,4 +233,21 @@ const data_recog = [
     title: "Mejor Canal Pago de Haberes 4to Trimestre 2015 ",
   },
   { id: 4, image: "io-service1", title: "Cobranzas Telefónicas" },
+];
+
+const data_allied = [
+  { id: 1, logo: imageService1, name: "" },
+  { id: 2, logo: imageService1, name: "" },
+  { id: 3, logo: imageService1, name: "" },
+  { id: 4, logo: imageService1, name: "" },
+  { id: 5, logo: imageService1, name: "" },
+  { id: 6, logo: imageService1, name: "" },
+  { id: 7, logo: imageService1, name: "" },
+  { id: 8, logo: imageService1, name: "" },
+  { id: 9, logo: imageService1, name: "" },
+  { id: 10, logo: imageService1, name: "" },
+  { id: 11, logo: imageService1, name: "" },
+  { id: 12, logo: imageService1, name: "" },
+  { id: 13, logo: imageService1, name: "" },
+  { id: 14, logo: imageService1, name: "" },
 ];

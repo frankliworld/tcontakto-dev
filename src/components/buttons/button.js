@@ -5,7 +5,7 @@ import { MediumText, TextSmall } from "../styles/TextStyles";
 
 export function Button(props) {
   return (
-    <Wrapped {...props}>
+    <Wrapped {...props} onClick={props.onButton}>
       <Text {...props}>{props.title}</Text>
     </Wrapped>
   );

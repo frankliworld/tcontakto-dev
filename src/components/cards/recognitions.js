@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { themes } from "../styles/ColorsStyle";
 import { BodyMain } from "../styles/TextStyles";
-import image from "./../../assets/image/image-re.png";
+import image from "../../assets/images/image-re.png";
 
 export function CardRecognitions(props) {
   return (

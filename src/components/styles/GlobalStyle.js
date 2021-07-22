@@ -22,8 +22,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: white;
-    /* background: ${themes.light.backgroundColor}; */
+    /* background: white; */
+    background: ${themes.light.backgroundColor};
     @media (prefers-color-scheme: dark) {
         /* background: ${themes.dark.backgroundColor}; */
     }

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { message, Tooltip } from "antd";
 import { Button } from "../buttons/button";
@@ -10,7 +10,7 @@ export function Header(props) {
   const { history } = props;
 
   useEffect(() => {
-    console.log(props.location.pathname)
+    console.log(props.location.pathname);
   }, []);
 
   function link(r) {
@@ -20,38 +20,59 @@ export function Header(props) {
   function navigation(x) {
     if (x) {
       history.push(x);
+      scrollToTop()
     } else {
-      // message.info("En desarrollo");
+      message.info("En desarrollo");
     }
+  }
+
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
+  function toContact() {
+    let parent = document.getElementById("form-start");
+    parent.scrollIntoView();
+    parent.querySelector("input").focus()
   }
 
   return (
     <Wrapped>
-      <Icon icon="io-logo" />
-      <ListNav>
-        {data.map((i) => (
-          <Touch
-            key={i.id}
-            name={i.name}
-            status={props.location.pathname === i.route}
-            route={i.route}
-            onSelect={i.key === 20 ? props.closeSesion : navigation}
-          />
-        ))}
-      </ListNav>
-      {/* <Button title="Iniciar sesion"/> */}
+      <Content>
+        <WrappedTouch onClick={() => navigation("/")}>
+          <Icon icon="io-logo" />
+        </WrappedTouch>
+        <ListNav>
+          {data.map((i) => (
+            <Touch
+              key={i.id}
+              name={i.name}
+              status={props.location.pathname === i.route}
+              route={i.route}
+              onSelect={i.id === 3 ? toContact : navigation}
+            />
+          ))}
+        </ListNav>
+        {/* <Button title="Iniciar sesion"/> */}
+      </Content>
     </Wrapped>
   );
 }
 
-const Wrapped = styled(Wrapper)`
-  z-index: 1;
+const Wrapped = styled.header`
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(40px);
+  ${themes.light.card}
+`;
+const Content = styled(Wrapper)`
+  height: 60px;
   display: grid;
   grid-template-columns: 300px auto;
   gap: 20px;
   align-items: center;
-  height: 60px;
-  ${themes.light.card}
   @media (${media.tablet}) {
     grid-template-columns: 1fr auto;
   }
@@ -62,7 +83,7 @@ const Touch = (props) => (
   </WrappedTouch>
 );
 const WrappedTouch = styled.div`
-  /* background: ${themes.light.primary}; */
+  cursor: pointer;
 `;
 const Text = styled(MediumText)`
   color: ${(props) =>
@@ -83,8 +104,8 @@ const ListNav = styled.div`
 
 const data = [
   { id: 1, name: "Servicios", status: true, route: "/services" },
-  { id: 2, name: "Clientes", status: false, route: "clients" },
-  { id: 3, name: "Contactanos", status: false, route: "contact" },
-  { id: 4, name: "Trabaja con nosotros", status: false, route: "work" },
-  { id: 5, name: "Blog", status: false, route: "blog" },
+  { id: 2, name: "Clientes", status: false, route: "/clients" },
+  { id: 3, name: "Contactanos", status: false, route: "/contact" },
+  { id: 4, name: "Trabaja con nosotros", status: false, route: "/work" },
+  { id: 5, name: "Blog", status: false, route: "/blog" },
 ];
