@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../io";
 
 export const H1 = styled.h1`
   font-weight: bold;
@@ -64,4 +65,7 @@ export const Wrapper = styled.section`
   padding: 0 30px;
   margin: 0 auto;
   position: relative;
+  @media (${media.tablet}) {
+    padding: 0 20px;
+  }
 `;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { CardHistory } from "../cards/history";
+import { media } from "../io";
 import { themes } from "../styles/ColorsStyle";
 import { H2, TextSmall, Wrapper } from "../styles/TextStyles";
 
@@ -45,6 +46,10 @@ const Content = styled(Wrapper)`
   grid-template-columns: repeat(2, 1fr);
   display: grid;
   gap: 40px;
+  @media (${media.tablet}) {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
 `;
 const Title = styled(H2)`
   color: ${themes.light.gray};

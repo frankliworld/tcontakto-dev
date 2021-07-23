@@ -1,13 +1,18 @@
 //media query
 
 import {
+  IconBlog,
+  IconClients,
+  IconContacts,
   IconFacebook,
+  IconHamburger,
   IconHomeSwipe,
   IconInstagram,
   IconLinkedin,
   IconMail,
   IconService1,
   IconService1Act,
+  IconServices,
   IconValues1,
   IconValues2,
   IconValues3,
@@ -15,6 +20,7 @@ import {
   IconValues5,
   IconValues6,
   IconValues7,
+  IconWork,
   Logo
 } from "./icons";
 
@@ -94,11 +100,36 @@ export const Icon = (props) => {
       icon = <IconMail {...props} />;
       break;
     }
+    case "io-services": {
+      icon = <IconServices {...props} />;
+      break;
+    }
+    case "io-clients": {
+      icon = <IconClients {...props} />;
+      break;
+    }
+    case "io-contacts": {
+      icon = <IconContacts {...props} />;
+      break;
+    }
+    case "io-work": {
+      icon = <IconWork {...props} />;
+      break;
+    }
+    case "io-blog": {
+      icon = <IconBlog {...props} />;
+      break;
+    }
+
+    case "io-hamburger": {
+      icon = <IconHamburger {...props} />;
+      break;
+    }
 
     //End icons local
 
     default: {
-      icon = <Logo {...props} />;
+      icon = <IconServices {...props} />;
       break;
     }
   }

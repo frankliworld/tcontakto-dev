@@ -102,6 +102,11 @@ const ListSocials = styled.div`
   backdrop-filter: blur(40px);
   border-radius: 10px;
   padding: 4px 10px 4px 4px;
+  @media (${media.tablet}) {
+    position: relative;
+    bottom: 0px;
+    padding: 0px;
+  }
 `;
 
 const Social = (props) => {
@@ -142,7 +147,7 @@ const data_social = [
   },
   {
     name: "Mail",
-    url: "mailto:",
+    url: "mailto:info@tcontakto.com",
     icon: "io-mail",
   },
 ];

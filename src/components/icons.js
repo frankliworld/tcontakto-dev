@@ -443,12 +443,12 @@ export const IconHomeSwipe =()=>(
  )
 
  export const IconFacebook = (props) => (
-  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+  <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
   <path d="M12.8333 18.3333V25.6667H18.3333V38.5H25.6667V25.6667H31.1667L33 18.3333H25.6667V14.6667C25.6667 14.1804 25.8598 13.7141 26.2036 13.3703C26.5475 13.0265 27.0138 12.8333 27.5 12.8333H33V5.5H27.5C25.0689 5.5 22.7373 6.46577 21.0182 8.18485C19.2991 9.90394 18.3333 12.2355 18.3333 14.6667V18.3333H12.8333Z" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>  
  )
  export const IconInstagram = (props) => (
-  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="32" height="32" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M29.3333 7.3335H14.6667C10.6166 7.3335 7.33334 10.6167 7.33334 14.6668V29.3335C7.33334 33.3836 10.6166 36.6668 14.6667 36.6668H29.3333C33.3834 36.6668 36.6667 33.3836 36.6667 29.3335V14.6668C36.6667 10.6167 33.3834 7.3335 29.3333 7.3335Z" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M22 27.5C25.0376 27.5 27.5 25.0376 27.5 22C27.5 18.9624 25.0376 16.5 22 16.5C18.9624 16.5 16.5 18.9624 16.5 22C16.5 25.0376 18.9624 27.5 22 27.5Z" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M30.25 13.75V13.751" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -456,7 +456,7 @@ export const IconHomeSwipe =()=>(
 
  )
  export const IconLinkedin = (props) => (
-  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="32" height="32" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M33 7.3335H11C8.97495 7.3335 7.33333 8.97512 7.33333 11.0002V33.0002C7.33333 35.0252 8.97495 36.6668 11 36.6668H33C35.025 36.6668 36.6667 35.0252 36.6667 33.0002V11.0002C36.6667 8.97512 35.025 7.3335 33 7.3335Z" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M14.6667 20.1665V29.3332" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M14.6667 14.6665V14.6848" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -466,7 +466,7 @@ export const IconHomeSwipe =()=>(
   
  )
  export const IconMail = (props) => (
-  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="30" height="30" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M22 33.0002H9.16667C8.19421 33.0002 7.26158 32.6139 6.57394 31.9262C5.88631 31.2386 5.5 30.306 5.5 29.3335V11.0002C5.5 10.0277 5.88631 9.09507 6.57394 8.40744C7.26158 7.7198 8.19421 7.3335 9.16667 7.3335H34.8333C35.8058 7.3335 36.7384 7.7198 37.4261 8.40744C38.1137 9.09507 38.5 10.0277 38.5 11.0002V24.7502" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M5.5 11L22 22L38.5 11" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M27.5 33H38.5" stroke="#999086" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -474,3 +474,54 @@ export const IconHomeSwipe =()=>(
 </svg>
  
  )
+
+ export const IconServices = (props) => (
+  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12.3398 12L4.33984 8V17L12.3398 21V12Z" fill="currentColor" fill-opacity="0.2"/>
+  <path d="M12.3398 21L20.3398 17V8L12.3398 12V21Z" fill="currentColor" fill-opacity="0.6"/>
+  <path d="M12.3398 4L4.33984 8L12.3398 12L20.3398 8L12.3398 4Z" fill="currentColor" fill-opacity="0.4"/>
+  </svg>  
+ )
+ export const IconClients = (props) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 8H2V22H22V8Z" fill="currentColor" fill-opacity="0.3"/>
+<path d="M12 16.5C8.96 16.5 6.5 18.96 6.5 22C6.51 22 17.5 22 17.5 22C17.5 18.96 15.04 16.5 12 16.5Z" fill="currentColor" fill-opacity="0.6"/>
+<path d="M12 16.5C13.5188 16.5 14.75 15.2688 14.75 13.75C14.75 12.2312 13.5188 11 12 11C10.4812 11 9.25 12.2312 9.25 13.75C9.25 15.2688 10.4812 16.5 12 16.5Z" fill="currentColor" fill-opacity="0.6"/>
+<path d="M8 2H16" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 5H19" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+ 
+ )
+ export const IconContacts = (props) => (
+  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.2398 8H15.8398C13.3498 8 11.3398 10.01 11.3398 12.5C11.3398 13.02 11.4298 13.52 11.5898 13.99C11.5098 14 11.4198 14 11.3398 14H9.33984L5.33984 18V13.58C3.57984 12.81 2.33984 11.05 2.33984 9C2.33984 6.24 4.57984 4 7.33984 4H11.3398C13.7598 4 15.7798 5.72 16.2398 8Z" fill="currentColor" fill-opacity="0.6"/>
+<path d="M22.3398 12.5C22.3398 10.01 20.3298 8 17.8398 8H15.8398C13.3498 8 11.3398 10.01 11.3398 12.5C11.3398 14.99 13.3498 17 15.8398 17H17.3398L20.3398 20V16.24C21.5498 15.43 22.3398 14.06 22.3398 12.5Z" fill="currentColor" fill-opacity="0.3"/>
+</svg>
+
+ )
+ export const IconWork = (props) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.0002 2C8.66016 2 5.71016 3.72 5.76016 8.16L2.04016 12.98C1.93016 13.12 2.06016 13.3 2.26016 13.3L4.74016 14.53C4.87016 15.45 5.35016 18.13 5.61016 19.47C5.70016 19.89 9.80016 19.57 9.80016 19.57L11.0002 22" fill="currentColor" fill-opacity="0.3"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.8447 2.20224C15.9563 1.89025 15.7939 1.54682 15.4819 1.43516C15.17 1.3235 14.8265 1.4859 14.7149 1.79789L13.6949 4.64789C13.5832 4.95988 13.7456 5.30332 14.0576 5.41498C14.3696 5.52664 14.713 5.36424 14.8247 5.05224L15.8447 2.20224ZM22.0491 5.22039C22.3144 5.02182 22.3684 4.64579 22.1699 4.38051C21.9713 4.11522 21.5953 4.06114 21.33 4.25972L17.91 6.81972C17.6447 7.01829 17.5906 7.39432 17.7892 7.65961C17.9878 7.92489 18.3638 7.97897 18.6291 7.78039L22.0491 5.22039ZM18.1311 11.8261C18.1554 11.4957 18.4429 11.2474 18.7734 11.2717L22.0434 11.5117C22.3739 11.5359 22.6221 11.8235 22.5979 12.154C22.5736 12.4845 22.2861 12.7327 21.9556 12.7085L18.6856 12.4685C18.3551 12.4442 18.1068 12.1566 18.1311 11.8261ZM11.7197 17.3101C11.3884 17.3101 11.1197 17.5787 11.1197 17.9101C11.1197 18.2415 11.3884 18.5101 11.7197 18.5101H14.3497C14.6811 18.5101 14.9497 18.2415 14.9497 17.9101C14.9497 17.5787 14.6811 17.3101 14.3497 17.3101H11.7197ZM11.1197 15.33C11.1197 14.9987 11.3884 14.73 11.7197 14.73H11.8791C10.5599 13.6227 8.75386 11.193 10.2298 9.25009C11.6698 7.36009 14.3998 7.36009 15.8398 9.25009C17.3142 11.191 15.5204 13.6245 14.1981 14.73H14.3497C14.6811 14.73 14.9497 14.9987 14.9497 15.33C14.9497 15.6614 14.6811 15.93 14.3497 15.93H11.7197C11.3884 15.93 11.1197 15.6614 11.1197 15.33ZM13.6398 14.73V12.1748C13.9183 11.9752 14.0998 11.6489 14.0998 11.2801C14.0998 10.6726 13.6073 10.1801 12.9998 10.1801C12.3923 10.1801 11.8998 10.6726 11.8998 11.2801C11.8998 11.6831 12.1165 12.0355 12.4398 12.2271V14.73H13.6398ZM12.9727 11.1838C12.9855 11.1824 12.9984 11.1814 13.0114 11.1808C13.0076 11.1803 13.0037 11.1801 12.9998 11.1801C12.9904 11.1801 12.9813 11.1814 12.9727 11.1838Z" fill="currentColor" fill-opacity="0.6"/>
+</svg>
+  
+ )
+ export const IconBlog = (props) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 21H3C2.45 21 2 20.55 2 20V4C2 3.45 2.45 3 3 3H12V21Z" fill="currentColor" fill-opacity="0.3"/>
+<path d="M21 21H12V3H21C21.55 3 22 3.45 22 4V20C22 20.55 21.55 21 21 21Z" fill="currentColor" fill-opacity="0.3"/>
+<path d="M4 12H10" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.2" stroke-miterlimit="10"/>
+<path d="M4 8H10" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.2" stroke-miterlimit="10"/>
+<path d="M4 16H10" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.2" stroke-miterlimit="10"/>
+<path d="M14 12H20" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.2" stroke-miterlimit="10"/>
+<path d="M14 8H20" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.2" stroke-miterlimit="10"/>
+</svg>
+ 
+ )
+export const IconHamburger = (props) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 8H22" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M2 16H22" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
+
+)

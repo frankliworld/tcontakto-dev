@@ -8,6 +8,9 @@ import { MediumText, Wrapper } from "../styles/TextStyles";
 import { Checkbox } from "./checkbox";
 import { Input } from "./input";
 
+import image from "../../assets/images/history.jpg";
+import { media } from "../io";
+
 export function Form(props) {
   const [loader, setLoader] = useState(false);
   const [name, setName] = useState("");
@@ -61,11 +64,7 @@ export function Form(props) {
   return (
     <Wrapped>
       <Card>
-        <Cover
-          src={
-            "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          }
-        />
+        <Cover src={image}/>
         <ContentForm>
           <Title>Contáctanos</Title>
           <All>
@@ -95,9 +94,13 @@ const Card = styled(Wrapper)`
   background: white;
   border-radius: 30px;
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 30% 1fr;
   gap: 40px;
   padding: 30px;
+  @media (${media.tablet}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px auto;
+  }
 `;
 const Title = styled(MediumText)`
   font-weight: bold;
@@ -126,4 +129,7 @@ const All = styled.form`
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin: 0;
+  @media (${media.mobileM}) {
+    grid-template-columns: 1fr;
+  }
 `;

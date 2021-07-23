@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { media } from "../io";
 import { themes } from "../styles/ColorsStyle";
 import { MediumText, TextSmall } from "../styles/TextStyles";
 
@@ -49,4 +50,8 @@ const Text = styled(MediumText)`
     css`
       color: ${themes.light.primary};
     `}
+
+  @media (${media.tablet}) {
+    padding: 0 10px;
+  }
 `;

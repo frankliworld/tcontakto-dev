@@ -13,7 +13,6 @@ import imageService4 from "../assets/images/services/service-4.jpeg";
 import imageService5 from "../assets/images/services/service-5.jpeg";
 import imageService6 from "../assets/images/services/service-6.jpeg";
 
-
 export function Work(props) {
   return (
     <Master {...props}>
@@ -23,7 +22,10 @@ export function Work(props) {
           <CardService key={i.id} image={i.image} title={i.title} />
         ))}
       </GridService>
-      <Description>¿Quieres ser parte de la familia de TCONTAKTO? Postula a un puesto de tu interés y trabaja con nosotros.</Description>
+      <Description>
+        ¿Quieres ser parte de la familia de TCONTAKTO? Postula a un puesto de tu
+        interés y trabaja con nosotros.
+      </Description>
     </Master>
   );
 }
@@ -31,14 +33,14 @@ export function Work(props) {
 const GridService = styled(Wrapper)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
+  gap: 60px;
   @media (${media.tablet}) {
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 20px;
   }
   @media (${media.movil}) {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
 `;
 
@@ -53,7 +55,7 @@ const Description = styled(BodyMain)`
   text-align: center;
   color: ${themes.light.primary};
   margin: 100px auto;
-`
+`;
 const data_services = [
   {
     id: 1,

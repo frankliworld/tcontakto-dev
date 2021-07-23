@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../buttons/button";
-import { Icon } from "../io";
+import { Icon, media } from "../io";
 import { themes } from "../styles/ColorsStyle";
 import { BodyIntro, BodyMain, H2, H3 } from "../styles/TextStyles";
 
@@ -47,6 +47,9 @@ const Wrapped = styled.article`
     opacity: 0;
     visibility: hidden;
   }
+  @media (${media.tablet}) {
+    max-height: 340px;
+  }
 `;
 
 const Cover = (props) => (
@@ -77,8 +80,15 @@ const Text = styled(H3)`
   color: ${themes.light.gray};
   margin: 0;
   padding: 0 30px;
+  @media (${media.tablet}) {
+    font-size: 1.2em;
+    padding: 0 20px;
+  }
 `;
 
 const WrappedButton = styled.div`
   padding: 0 30px 30px 30px;
+  @media (${media.tablet}) {
+    padding: 0 20px 20px 20px;
+  }
 `;

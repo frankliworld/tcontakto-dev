@@ -76,6 +76,7 @@ export function Home(props) {
     <Master {...props}>
       <WrappedHome />
       <Section
+        id="services-start"
         title="Servicios"
         description="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto."
       >
@@ -109,6 +110,7 @@ export function Home(props) {
         </CustomSwiper>
       </Section>
       <Section
+        id="clients-start"
         title="Aliados"
         description="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto."
       >
@@ -143,29 +145,16 @@ export function Home(props) {
   );
 }
 const GridService = styled(Wrapper)`
+  padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
+  gap: 60px;
   @media (${media.tablet}) {
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 20px;
   }
   @media (${media.movil}) {
     grid-template-columns: 1fr;
-    gap: 30px;
-  }
-`;
-
-const GridRecog = styled(Wrapper)`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 40px;
-  @media (${media.tablet}) {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-  }
-  @media (${media.movil}) {
-    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 `;

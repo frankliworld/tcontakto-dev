@@ -10,9 +10,6 @@ function App() {
     <Router>
       <Switch>
         <Route {...props} key={1} exact={true} path="/" component={(props) => <Home {...props} />}/>
-        <Route {...props} key={2} exact={true} path="/services" component={(props) => <Home {...props} />}/>
-        <Route {...props} key={3} exact={true} path="/clients" component={(props) => <Home {...props} />}/>
-        <Route {...props} key={4} exact={true} path="/contact" component={(props) => <Home {...props} />}/>
 
         <Route {...props} key={10} exact={true} path="/work" component={(props) => <Work {...props} />}/>
         
