@@ -8,13 +8,13 @@ import { MediumText, TextSmall, Wrapper } from "../styles/TextStyles";
 
 export function Header(props) {
   const { history } = props;
-  const [isOpen, setIsOpen] = useState(false)
-  
-  const ref = useRef()
-  const tooltipRef = useRef()
+  const [isOpen, setIsOpen] = useState(false);
+
+  const ref = useRef();
+  const tooltipRef = useRef();
 
   function handleMenu() {
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   }
 
   function handleClickOutside(event) {
@@ -23,16 +23,16 @@ export function Header(props) {
       !ref.current.contains(event.target) &&
       !tooltipRef.current.contains(event.target)
     ) {
-      setIsOpen(false)
+      setIsOpen(false);
     }
   }
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   function navigation(x) {
     if (x) {
@@ -131,10 +131,7 @@ const Content = styled(Wrapper)`
     grid-template-columns: 1fr auto;
   }
 `;
-const Burgers = styled.div`
-  cursor: pointer;
-  padding: 10px 0;
-`
+
 const Touch = (props) => (
   <WrappedTouch {...props} onClick={() => props.onSelect(props.route)}>
     <Icon {...props} />
@@ -172,6 +169,14 @@ const Text = styled(MediumText)`
   margin: 0;
   font-weight: 600;
 `;
+const Burgers = styled.div`
+  display: none;
+  @media (${media.tablet}) {
+    display: grid;
+    cursor: pointer;
+    padding: 10px 0;
+  }
+`;
 
 const ListNav = styled.div`
   display: flex;
@@ -186,16 +191,19 @@ const ListNavMobile = styled.div`
   position: absolute;
   right: 20px;
   top: 60px;
-  background: rgba(255,255,255, 0.3);
+  background: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 50px 100px rgba(0, 0, 0, 0.25),
     inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(40px);
   border-radius: 20px;
   transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
   transform-origin: center top;
-  transform:  ${props => props.isOpen ? 'rotateX(0deg) translateY(0px)' : 'skewY(-5deg) rotate(5deg) translateY(-30px)'};
-  visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
-  opacity: ${props => props.isOpen ? 1 : 0};
+  transform: ${(props) =>
+    props.isOpen
+      ? "rotateX(0deg) translateY(0px)"
+      : "skewY(-5deg) rotate(5deg) translateY(-30px)"};
+  visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
+  opacity: ${(props) => (props.isOpen ? 1 : 0)};
 `;
 
 const data = [
