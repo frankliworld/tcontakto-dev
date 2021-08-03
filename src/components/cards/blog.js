@@ -6,13 +6,25 @@ import { themes } from "../styles/ColorsStyle";
 import { BodyIntro, BodyMain, H2, H3, MediumText, TextSmall } from "../styles/TextStyles";
 
 export function CardBlog(props) {
+  const { history } = props;
+
+  function handleBlog() {
+    localStorage.setItem("blog", JSON.stringify(props));
+    history.push("/blog-info");
+    scrollToTop();
+  }
+
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <Wrapped>
       <Cover {...props} />
       <WrappedInfo>
-        <Text>{props.title}</Text>
-        <Description>{props.description}</Description>
-        <Button title="Leer más" ghost />
+        <Text>{props.title.substr(0, 70)}</Text>
+        <Description>{props.description.substr(0, 65)}...</Description>
+        <Button title="Leer más" ghost onButton={handleBlog}/>
       </WrappedInfo>
     </Wrapped>
   );

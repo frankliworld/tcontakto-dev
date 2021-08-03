@@ -1,6 +1,7 @@
 //media query
 
 import {
+  IconBack,
   IconBlog,
   IconClients,
   IconContacts,
@@ -123,6 +124,10 @@ export const Icon = (props) => {
 
     case "io-hamburger": {
       icon = <IconHamburger {...props} />;
+      break;
+    }
+    case "io-back": {
+      icon = <IconBack {...props} />;
       break;
     }
 

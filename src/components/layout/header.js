@@ -80,9 +80,11 @@ export function Header(props) {
   return (
     <Wrapped>
       <Content>
-        <div onClick={() => navigation("/")}>
-          <Icon icon="io-logo" />
-        </div>
+        {props.back ? (
+          <Back onClick={() => history.goBack()} />
+        ) : (
+          <Logo onClick={() => navigation("/")} />
+        )}
         <ListNav>
           {data.map((i, x) => (
             <Touch
@@ -130,6 +132,31 @@ const Content = styled(Wrapper)`
   @media (${media.tablet}) {
     grid-template-columns: 1fr auto;
   }
+`;
+
+const Logo = (props) => (
+  <div {...props}>
+    <Icon icon="io-logo" />
+  </div>
+);
+
+const Back = (props) => (
+  <WrappedBack {...props}>
+    <Icon icon="io-back" />
+    <TextBack>Volver</TextBack>
+  </WrappedBack>
+);
+
+const WrappedBack = styled.div`
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  color: ${themes.light.primary};
+  cursor: pointer;
+`;
+const TextBack = styled(MediumText)`
+  margin: 0;
+  color: ${themes.light.primary};
 `;
 
 const Touch = (props) => (

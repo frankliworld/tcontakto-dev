@@ -13,20 +13,21 @@ export function Input(props) {
     return (
         <Wrapped {...props}>
           <Label>{props.name}</Label>
-          <BaseArea {...props} />
+          <BaseArea {...props} placeholder={props.name}/>
         </Wrapped>
       );
   }
   return (
     <Wrapped {...props}>
       <Label>{props.name}</Label>
-      <Base {...props} />
+      <Base {...props} placeholder={props.name}/>
     </Wrapped>
   );
 }
 
 const Wrapped = styled.div`
   display: grid;
+  align-items: center;
   gap: 4px;
   ${props => props.gridArea && `grid-area: ${props.gridArea};`}
 `;

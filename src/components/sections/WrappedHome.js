@@ -35,7 +35,7 @@ const Container = styled(Wrapper)`
   display: grid;
   grid-template-columns: 440px 1fr;
   gap: 100px;
-  padding-top: 60px;
+  
   ${themes.light.card};
   @media (${media.tablet}) {
     display: flex;

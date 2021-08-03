@@ -16,10 +16,11 @@ export function Master(props) {
     <Layout>
       <Header {...props}/>
       <Content>{props.children}</Content>
-      <Footer/>
+      <Footer {...props}/>
     </Layout>
   );
 }
 
 const Content = styled.div`
+  padding-top: 60px;
 `;

@@ -7,16 +7,26 @@ import { themes } from "../styles/ColorsStyle";
 import { MediumText, Wrapper } from "../styles/TextStyles";
 import { Checkbox } from "./checkbox";
 import { Input } from "./input";
+import { Select, Tag } from 'antd';
 
-import image from "../../assets/images/history.jpg";
+import image from "../../assets/images/form.jpg";
 import { media } from "../io";
 
-export function Form(props) {
+const options = [
+  { value: 'EJECUTIVO DE VENTAS - TARJETAS DE CRÉDITO'},
+  { value: 'EJECUTIVO DE VENTAS - SEGUROS ONCOLOGICOS'},
+  { value: 'SUPERVISOR DE VENTAS - PRODUCTOS FINANCIEROS'},
+  { value: 'EJECUTIVO DE VENTAS - PRESTAMOS PERSONALES'},
+  { value: 'EJECUTIVO DE VENTAS - PAYRROLL'},
+  { value: 'EJECUTIVO DE VENTAS - ENTEL EMPRESAS'},
+];
+
+export function FormWork(props) {
   const [loader, setLoader] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [company, setCompany] = useState("");
+  const [file, setFile] = useState("");
   const [ruc, setRuc] = useState("");
   const [area, setArea] = useState("");
 
@@ -40,18 +50,8 @@ export function Form(props) {
       if (!response.STATUS)
         throw {message: response.MESSAGE}
       message.success('Registro exitoso, en breve nos pondremos en contacto.')
-      // ReactGA.event({
-      //   category: 'contact us',
-      //   action: 'Envio exitoso de formulario',
-      //   label: 'contactanos'
-      // });
     } catch (ex) {
       message.error(ex.message)
-      // ReactGA.event({
-      //   category: 'contact us',
-      //   action: 'Error al enviar formulario',
-      //   label: 'contactanos'
-      // });
     } finally {
       setLoader(false);
     }
@@ -62,6 +62,24 @@ export function Form(props) {
     // setName(e.target.value);
   }
 
+  function tagRender(props) {
+    const { label, value, closable, onClose} = props;
+    const onPreventMouseDown = event => {
+      event.preventDefault();
+      event.stopPropagation();
+    };
+    return (
+      <Tag
+        onMouseDown={onPreventMouseDown}
+        closable={closable}
+        onClose={onClose}
+        style={{ marginRight: 3 }}
+      >
+        {label}
+      </Tag>
+    );
+  }
+
   return (
     <Wrapped>
       <Card>
@@ -70,13 +88,37 @@ export function Form(props) {
           <Title>Contáctanos</Title>
           <Input id="form-start" type="text" name="Nombre y Apellido" onChange={(e) => setName(e.target.value)}/>
           <All>
-            <Input type="email" name="Correo" onChange={(e)=> setEmail(e.target.value)}/>
+            <Input type="number" name="DNI" onChange={(e)=> setRuc(e.target.value)}/>
             <Input type="number" name="Celular" onChange={(e)=> setPhone(e.target.value)}/>
-            <Input type="text" name="Nombre de la empresa" onChange={(e)=> setCompany(e.target.value)}/>
-            <Input type="number" name="RUC" onChange={(e)=> setRuc(e.target.value)}/>
+            <Input type="email" name="Correo" onChange={(e)=> setEmail(e.target.value)}/>
+            <Input type="file" name="Adjuntar CV" onChange={(e)=> setFile(e.target.value)}/>
+            
+            {/* <WrappedSelect>
+              <Label>¿Experiencia en el area?</Label>
+              <Select
+                mode="multiple"
+                showArrow
+                tagRender={tagRender}
+                // defaultValue={['gold', 'cyan']}
+                style={{ width: '100%' }}
+                options={options}
+              />
+            </WrappedSelect> */}
+            
           </All>
+          <WrappedSelect>
+              <Label>¿Qué tipo de trabajo desea?</Label>
+              <Select
+                mode="multiple"
+                showArrow
+                tagRender={tagRender}
+                // defaultValue={['gold', 'cyan']}
+                style={{ width: '100%' }}
+                options={options}
+              />
+            </WrappedSelect>
 
-          <Input area type="text" name="Mensaje" onChange={(e)=> setArea(e.target.value)}/>
+          {/* <Input area type="text" name="Puesto de interés:" onChange={(e)=> setArea(e.target.value)}/> */}
 
           <All>
             <Checkbox name="Acepto la Política de Privacidad"/>
@@ -91,6 +133,16 @@ export function Form(props) {
 const Wrapped = styled.div`
   width: 100%;
   margin: 80px auto;
+`;
+const WrappedSelect = styled.div`
+  display: grid;
+  align-items: center;
+  gap: 4px;
+`;
+const Label = styled(MediumText)`
+  color: ${themes.light.gray};
+  margin: 0;
+  font-size: 16px;
 `;
 const Card = styled(Wrapper)`
   background: white;

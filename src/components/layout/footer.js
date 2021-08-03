@@ -8,7 +8,7 @@ import { MediumText, TextSmall, Wrapper } from "../styles/TextStyles";
 export function Footer(props) {
   return (
     <>
-      <Form />
+      {props.noForm ? "" : <Form />}
       <Wrapped>
         <Content>
           <Column>
@@ -110,7 +110,6 @@ const ListSocials = styled.div`
 `;
 
 const Social = (props) => {
-
   function openUri(uri) {
     window.open(uri, "_blank");
   }
@@ -132,7 +131,7 @@ const WrappedSocial = styled.div`
 const data_social = [
   {
     name: "Facebook",
-    url: "https://www.facebook.com/Tcontakto",
+    url: "https://www.facebook.com/tcontaktosac",
     icon: "io-facebook",
   },
   {
