@@ -8,7 +8,7 @@ import { MediumText, Wrapper } from "../styles/TextStyles";
 import { Checkbox } from "./checkbox";
 import { Input } from "./input";
 
-import image from "../../assets/images/history.jpg";
+import image from "../../assets/images/form-contact.jpg";
 import { media } from "../io";
 
 export function Form(props) {

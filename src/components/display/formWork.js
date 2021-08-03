@@ -9,7 +9,7 @@ import { Checkbox } from "./checkbox";
 import { Input } from "./input";
 import { Select, Tag } from 'antd';
 
-import image from "../../assets/images/form.jpg";
+import image from "../../assets/images/form-work.jpg";
 import { media } from "../io";
 
 const options = [
@@ -91,7 +91,7 @@ export function FormWork(props) {
             <Input type="number" name="DNI" onChange={(e)=> setRuc(e.target.value)}/>
             <Input type="number" name="Celular" onChange={(e)=> setPhone(e.target.value)}/>
             <Input type="email" name="Correo" onChange={(e)=> setEmail(e.target.value)}/>
-            <Input type="file" name="Adjuntar CV" onChange={(e)=> setFile(e.target.value)}/>
+            <Input type="file" name="Subi hoja de vida (CV)" onChange={(e)=> setFile(e.target.value)}/>
             
             {/* <WrappedSelect>
               <Label>¿Experiencia en el area?</Label>

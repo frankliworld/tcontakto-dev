@@ -5,6 +5,8 @@ import { Icon, media } from "../io";
 import { themes } from "../styles/ColorsStyle";
 import { H2, TextSmall, Wrapper } from "../styles/TextStyles";
 
+import image from "../../assets/images/home.jpg";
+
 export default function WrappedHome(props) {
 
   function toContact() {
@@ -24,9 +26,7 @@ export default function WrappedHome(props) {
           {/* <Button title="Leer más" ghost /> */}
         </Row>
       </Column>
-      <Image>
-        <Icon icon="io-home-swipe" />
-      </Image>
+      <Image src={image}/>
     </Container>
   );
 }
@@ -37,6 +37,7 @@ const Container = styled(Wrapper)`
   gap: 100px;
   
   ${themes.light.card};
+  background: red;
   @media (${media.tablet}) {
     display: flex;
     flex-direction: column-reverse;
@@ -66,15 +67,9 @@ const Row = styled.div`
   gap: 20px;
   align-items: flex-end;
 `;
-const Image = styled(Column)`
-  padding: 0;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  
-  svg {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-  }
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
 `;

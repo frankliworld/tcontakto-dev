@@ -7,12 +7,12 @@ import { themes } from "../components/styles/ColorsStyle";
 import { BodyMain, H2, H3, Wrapper } from "../components/styles/TextStyles";
 import { FormWork } from "../components/display/formWork";
 
-import imageService1 from "../assets/images/services/service-1.jpg";
-import imageService2 from "../assets/images/services/service-2.jpeg";
-import imageService3 from "../assets/images/services/service-3.jpeg";
-import imageService4 from "../assets/images/services/service-4.jpeg";
-import imageService5 from "../assets/images/services/service-5.jpeg";
-import imageService6 from "../assets/images/services/service-6.jpeg";
+import imageService1 from "../assets/images/work/work1.jpg";
+import imageService2 from "../assets/images/work/work2.jpg";
+import imageService3 from "../assets/images/work/work3.jpg";
+import imageService4 from "../assets/images/work/work4.jpg";
+import imageService5 from "../assets/images/work/work5.jpg";
+import imageService6 from "../assets/images/work/work1.jpg";
 
 
 
